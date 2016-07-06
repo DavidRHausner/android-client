@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">2-Do List</string>
+    <string name="team_name">The Singularity</string>
+    <string name="action_settings">Settings</string>
+</resources>
