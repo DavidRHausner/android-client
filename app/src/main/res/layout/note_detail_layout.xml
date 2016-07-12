@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="singularity.twodolist.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Changed by Java code)"
+        android:id="@+id/checkTaskDescription"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="22dp"
+        android:checked="false"
+        android:singleLine="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="125dp"
+        android:id="@+id/editTaskNotes"
+        android:layout_below="@+id/checkTaskDescription"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/checkTaskDescription"
+        android:layout_alignEnd="@+id/checkTaskDescription"
+        android:inputType="textMultiLine"
+        android:editable="true"
+        android:singleLine="false"
+        android:clickable="true"
+        android:textIsSelectable="true"
+        android:scrollIndicators="right" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:id="@+id/buttonDelete"
+        android:layout_below="@+id/editDateTime"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+ Sublist"
+        android:id="@+id/button2"
+        android:layout_below="@+id/editDateTime"
+        android:layout_alignRight="@+id/textSharedWith"
+        android:layout_alignEnd="@+id/textSharedWith" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_below="@+id/editTaskNotes"
+        android:layout_centerHorizontal="true"
+        android:text="Assigned To" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textAssignedTo"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:editable="true"
+        android:layout_alignRight="@+id/editTaskNotes"
+        android:layout_alignEnd="@+id/editTaskNotes" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/textAssignedTo"
+        android:layout_centerHorizontal="true"
+        android:text="Shared With" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textSharedWith"
+        android:layout_below="@+id/editText3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textAssignedTo"
+        android:layout_alignEnd="@+id/textAssignedTo"
+        android:editable="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText4"
+        android:layout_below="@+id/textSharedWith"
+        android:layout_centerHorizontal="true"
+        android:text="Completed On" />
+
+    <EditText
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/editDateTime"
+        android:layout_below="@+id/editText4"
+        android:inputType="datetime"
+        android:layout_alignRight="@+id/button2"
+        android:layout_alignEnd="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
