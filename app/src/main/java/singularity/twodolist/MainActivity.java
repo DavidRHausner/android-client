@@ -9,6 +9,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.amazonaws.auth.CognitoCachingCredentialsProvider;
+import com.amazonaws.mobileconnectors.apigateway.ApiClientFactory;
+import com.amazonaws.regions.Regions;
+
+import singularity.twodolist.clientsdk.SingularityClient;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,6 +32,19 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        // Initialize the Amazon Cognito credentials provider
+        CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
+                getApplicationContext(),
+                "us-east-1:3bc12a8b-e666-42a5-8d49-f51b195d9eb9", // Identity Pool ID
+                Regions.US_EAST_1 // Region
+        );
+
+        ApiClientFactory factory = new ApiClientFactory()
+                .credentialsProvider(credentialsProvider);
+
+        final SingularityClient client = factory.build(SingularityClient.class);
+        client.todoIdGet("67b41392-bf7a-42af-9e0a-b6bd23ead01c");
     }
 
     @Override
